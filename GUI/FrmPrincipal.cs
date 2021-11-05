@@ -39,7 +39,7 @@ namespace GUI
         {
             FrmVista F = new FrmVista();
             F.MdiParent = this;
-            F.Tabla = "EMPLEADOS";
+            F.Tabla = "ALUMNOS";
             F.Show();
         }
 
