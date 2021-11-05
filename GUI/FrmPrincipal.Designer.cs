@@ -33,13 +33,13 @@ namespace GUI
             this.iNICIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pERSONALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cRUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vISTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iMPORTARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eXPORTARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aDMINISTRACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -48,8 +48,7 @@ namespace GUI
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iNICIOToolStripMenuItem,
-            this.aDMINISTRACIONToolStripMenuItem});
+            this.iNICIOToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -61,26 +60,34 @@ namespace GUI
             this.iNICIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pERSONALToolStripMenuItem});
             this.iNICIOToolStripMenuItem.Name = "iNICIOToolStripMenuItem";
-            this.iNICIOToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.iNICIOToolStripMenuItem.Text = "INICIO";
+            this.iNICIOToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.iNICIOToolStripMenuItem.Text = "ALUMNOS";
             this.iNICIOToolStripMenuItem.Click += new System.EventHandler(this.iNICIOToolStripMenuItem_Click);
             // 
             // pERSONALToolStripMenuItem
             // 
             this.pERSONALToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cRUDToolStripMenuItem,
+            this.vISTASToolStripMenuItem,
             this.iMPORTARToolStripMenuItem,
             this.eXPORTARToolStripMenuItem});
             this.pERSONALToolStripMenuItem.Name = "pERSONALToolStripMenuItem";
             this.pERSONALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pERSONALToolStripMenuItem.Text = "ALUMNOS";
+            this.pERSONALToolStripMenuItem.Text = "PERSONAL";
             // 
             // cRUDToolStripMenuItem
             // 
             this.cRUDToolStripMenuItem.Name = "cRUDToolStripMenuItem";
-            this.cRUDToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.cRUDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cRUDToolStripMenuItem.Text = "CRUD";
             this.cRUDToolStripMenuItem.Click += new System.EventHandler(this.cRUDToolStripMenuItem_Click);
+            // 
+            // vISTASToolStripMenuItem
+            // 
+            this.vISTASToolStripMenuItem.Name = "vISTASToolStripMenuItem";
+            this.vISTASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vISTASToolStripMenuItem.Text = "VISTAS";
+            this.vISTASToolStripMenuItem.Click += new System.EventHandler(this.vISTASToolStripMenuItem_Click);
             // 
             // iMPORTARToolStripMenuItem
             // 
@@ -88,7 +95,7 @@ namespace GUI
             this.cSVToolStripMenuItem1,
             this.xMLToolStripMenuItem1});
             this.iMPORTARToolStripMenuItem.Name = "iMPORTARToolStripMenuItem";
-            this.iMPORTARToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.iMPORTARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iMPORTARToolStripMenuItem.Text = "IMPORTAR";
             // 
             // cSVToolStripMenuItem1
@@ -111,7 +118,7 @@ namespace GUI
             this.xMLToolStripMenuItem,
             this.cSVToolStripMenuItem});
             this.eXPORTARToolStripMenuItem.Name = "eXPORTARToolStripMenuItem";
-            this.eXPORTARToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.eXPORTARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eXPORTARToolStripMenuItem.Text = "EXPORTAR";
             // 
             // xMLToolStripMenuItem
@@ -128,12 +135,6 @@ namespace GUI
             this.cSVToolStripMenuItem.Text = "CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.cSVToolStripMenuItem_Click);
             // 
-            // aDMINISTRACIONToolStripMenuItem
-            // 
-            this.aDMINISTRACIONToolStripMenuItem.Name = "aDMINISTRACIONToolStripMenuItem";
-            this.aDMINISTRACIONToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
-            this.aDMINISTRACIONToolStripMenuItem.Text = "ADMINISTRACION";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -147,7 +148,7 @@ namespace GUI
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
-            this.Text = "SISTEMA DE GESTION DE ALUMNOS";
+            this.Text = "SISTEMA DE GESTION";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -162,9 +163,9 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem iNICIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pERSONALToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cRUDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vISTASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iMPORTARToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eXPORTARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aDMINISTRACIONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem;

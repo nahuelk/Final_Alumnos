@@ -24,12 +24,21 @@ namespace GUI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            ALUMNOS E = new ALUMNOS();
+            ALUMNO E = new ALUMNO();
             E.DNI = Convert.ToInt32(txtDni.Text);
             E.APELLIDO = txtApellido.Text;
             E.NOMBRE = txtNombre.Text;
             E.MATRICULA = Convert.ToInt32(txtMatricula.Text);
+            E.CONTRASENA = txtContrasena.Text;
 
+            if (chkbxHabilitado.Checked)
+            {
+                E.ESTADO = "true";
+            }
+            else
+            {
+                E.ESTADO = "false";
+            }
             negocio.AltaAlumno(E);
 
             MessageBox.Show("El registro ha sido dado de alta");
@@ -39,12 +48,20 @@ namespace GUI
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
-            ALUMNOS E = new ALUMNOS();
+            ALUMNO E = new ALUMNO();
             E.DNI = Convert.ToInt32(txtDni.Text);
             E.APELLIDO = txtApellido.Text;
             E.NOMBRE = txtNombre.Text;
             E.MATRICULA = Convert.ToInt32(txtMatricula.Text);
-
+            E.CONTRASENA = txtContrasena.Text;
+            if (chkbxHabilitado.Checked)
+            {
+                E.ESTADO = "true";
+            }
+            else
+            {
+                E.ESTADO = "false";
+            }
             negocio.ModificarAlumno(E);
 
             MessageBox.Show("El registro ha sido modificado");
@@ -52,7 +69,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ALUMNOS alumno = new ALUMNOS();
+            ALUMNO alumno = new ALUMNO();
             NEGOCIO negocio = new NEGOCIO();
             alumno = negocio.fichaAlumno(Convert.ToInt32(txtDni.Text));
             if (alumno.DNI != 0)
@@ -60,7 +77,16 @@ namespace GUI
                 txtApellido.Text = alumno.APELLIDO;
                 txtNombre.Text = alumno.NOMBRE;
                 txtMatricula.Text = alumno.MATRICULA.ToString();
-            }
+                txtContrasena.Text = alumno.CONTRASENA;
+                if (alumno.ESTADO == "true")
+                {
+                    chkbxHabilitado.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    chkbxHabilitado.CheckState = CheckState.Unchecked;
+                }
+        }
             else
                 MessageBox.Show("El Registro no Existe");
         }
@@ -68,7 +94,7 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             {
-                ALUMNOS alumno = new ALUMNOS();
+                ALUMNO alumno = new ALUMNO();
                 NEGOCIO negocio = new NEGOCIO();
                 alumno = negocio.EliminarAlumno(Convert.ToInt32(txtDni.Text));
                 if (alumno.DNI != 0)
@@ -77,7 +103,9 @@ namespace GUI
                     txtDni.Clear();
                     txtApellido.Clear();
                     txtNombre.Clear();
+                    txtNombre.Clear();
                     txtMatricula.Clear();
+                    txtContrasena.Clear();
                 }
                 else
                     MessageBox.Show("El Registro no Existe");
@@ -85,6 +113,7 @@ namespace GUI
                 txtApellido.Clear();
                 txtNombre.Clear();
                 txtMatricula.Clear();
+                txtContrasena.Clear();
             }
 
         }
@@ -94,7 +123,7 @@ namespace GUI
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void label4_Click_1(object sender, EventArgs e)
         {
 
         }

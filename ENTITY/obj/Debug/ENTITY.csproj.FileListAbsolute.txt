@@ -1,0 +1,12 @@
+C:\Users\nomee\source\repos\Final\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\nomee\source\repos\Final\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\nomee\source\repos\Final\ENTITY\obj\Debug\ENTITY.csprojAssemblyReference.cache
+C:\Users\nomee\source\repos\Final\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\nomee\source\repos\Final\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\nomee\source\repos\Final\ENTITY\obj\Debug\ENTITY.pdb
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\obj\Debug\ENTITY.csprojAssemblyReference.cache
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\nomee\OneDrive\Escritorio\Final\ENTITY\obj\Debug\ENTITY.pdb
