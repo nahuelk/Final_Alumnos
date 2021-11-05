@@ -42,26 +42,17 @@ namespace DAL
 
         }
 
-        public void Agregar(ALUMNOS alumno)
+        public void Agregar(ALUMNO alumno)
         {
-            try
-            {
-                string StrSql = "Insert into ALUMNOS (dni, apellido, nombre, matricula) values(" + alumno.DNI.ToString() + ",'" + alumno.APELLIDO + "','" + alumno.NOMBRE + "','" + alumno.MATRICULA.ToString() + "')";
-                Cmd = new SqlCommand(StrSql, Cnx);
-                Cmd.ExecuteNonQuery();
-            }
-        catch (SqlException)
-            {
-                return;
-            }
+            string StrSql = "Insert into ALUMNOS (dni, apellido, nombre, matricula, contrasena, estado) values(" + alumno.DNI.ToString() + ",'" + alumno.APELLIDO + "','" + alumno.NOMBRE + "','" + alumno.MATRICULA.ToString() + "','" + alumno.CONTRASENA + "','" + alumno.ESTADO + "')";
+            Cmd = new SqlCommand(StrSql, Cnx);
+            Cmd.ExecuteNonQuery();
 
-            
-            }
+        }
 
-
-        public void Modificar(ALUMNOS alumno)
+        public void Modificar(ALUMNO alumno)
         {
-            string StrSql = "UPDATE ALUMNOS SET apellido='" + alumno.APELLIDO + "',nombre='" + alumno.NOMBRE + "',matricula='" + alumno.MATRICULA.ToString() + "'Where dni=" + alumno.DNI.ToString();
+            string StrSql = "UPDATE ALUMNOS SET apellido='" + alumno.APELLIDO + "',nombre='" + alumno.NOMBRE + "',matricula='" + alumno.MATRICULA.ToString() + "',contrasena='" + alumno.CONTRASENA + "',estado='" + alumno.ESTADO + "'Where dni=" + alumno.DNI.ToString();
             Cmd = new SqlCommand(StrSql, Cnx);
             Cmd.ExecuteNonQuery();
 
@@ -100,7 +91,7 @@ namespace DAL
 
             while (Dtr.Read())
             {
-                string linea = Dtr[0].ToString() + ";" + Dtr[1].ToString() + ";" + Dtr[2].ToString() + ";" + Dtr[3].ToString();
+                string linea = Dtr[0].ToString() + ";" + Dtr[1].ToString() + ";" + Dtr[2].ToString() + ";" + Dtr[3].ToString() + ";" + Dtr[4].ToString() + ";" + Dtr[5].ToString();
                 archivo.WriteLine(linea);
 
             }
@@ -124,7 +115,7 @@ namespace DAL
                 //archivo.ReadLine();
                 registro = archivo.ReadLine().Split(';');
 
-                Cmd = new SqlCommand("Insert into ALUMNOS(dni, apellido, nombre, matricula) values(" + registro[0] + ",'" + registro[1] + "','" + registro[2] + "','" + registro[3] + "')", Cnx);
+                Cmd = new SqlCommand("Insert into ALUMNOS(dni, apellido, nombre, matricula, contrasena, estado) values(" + registro[0] + ",'" + registro[1] + "','" + registro[2] + "','" + registro[3] + "','" + registro[4] + "','" + registro[5] + "')", Cnx);
                 Cmd.ExecuteNonQuery();
 
 
@@ -136,7 +127,7 @@ namespace DAL
 
         public void ImportarXML(string nombreArchivo)
         {
-            ALUMNOS alumno = new ALUMNOS();
+            ALUMNO alumno = new ALUMNO();
 
             using (XmlReader reader = XmlReader.Create(nombreArchivo))
             {
@@ -157,7 +148,13 @@ namespace DAL
                                 break;
                             case "MATRICULA":
                                 alumno.MATRICULA = Convert.ToInt32(reader.ReadString());
-                                Cmd = new SqlCommand("Insert into ALUMNOS(dni, apellido, nombre, matricula) values(" + alumno.DNI + ",'" + alumno.APELLIDO + "','" + alumno.NOMBRE + ",'" + alumno.MATRICULA + "')", Cnx);
+                                break;
+                            case "CONTRASENA":
+                                alumno.CONTRASENA = reader.ReadString();
+                                break;
+                            case "ESTADO":
+                                alumno.ESTADO = reader.ReadString();
+                                Cmd = new SqlCommand("Insert into ALUMNOS(dni, apellido, nombre, matricula) values(" + alumno.DNI + ",'" + alumno.APELLIDO + "','" + alumno.NOMBRE + ",'" + alumno.MATRICULA + ",'" + alumno.CONTRASENA + ",'" + alumno.ESTADO + "')", Cnx);
                                 Cmd.ExecuteNonQuery();
                                 break;
                         }
@@ -169,9 +166,9 @@ namespace DAL
 
         }
 
-        public ALUMNOS ficha(Int32 dni)
+        public ALUMNO ficha(Int32 dni)
         {
-            ALUMNOS alumno = new ALUMNOS();
+            ALUMNO alumno = new ALUMNO();
 
         Cmd = new SqlCommand("Select * from ALUMNOS where dni=" + dni, Cnx);
 
@@ -182,9 +179,10 @@ namespace DAL
                 alumno.APELLIDO = Dtr[1].ToString();
                 alumno.NOMBRE = Dtr[2].ToString();
                 alumno.MATRICULA = Convert.ToInt32(Dtr[3]);
+                alumno.CONTRASENA = Dtr[4].ToString();
+                alumno.ESTADO = Dtr[5].ToString();
 
-
-    }
+            }
             else
                 alumno.DNI = 0;
             return alumno;
@@ -192,9 +190,9 @@ namespace DAL
 
 
 
-        public ALUMNOS Eliminar(Int32 dni)
+        public ALUMNO Eliminar(Int32 dni)
         {
-            ALUMNOS alumno = new ALUMNOS();
+            ALUMNO alumno = new ALUMNO();
 
 
             
@@ -207,6 +205,8 @@ namespace DAL
                 alumno.APELLIDO = Dtr[1].ToString();
                 alumno.NOMBRE = Dtr[2].ToString();
                 alumno.MATRICULA = Convert.ToInt32(Dtr[3]);
+                alumno.CONTRASENA = Dtr[4].ToString();
+                alumno.ESTADO = Dtr[5].ToString();
 
             }
             else
@@ -214,7 +214,7 @@ namespace DAL
 
             Dtr.Close();
 
-            Cmd = new SqlCommand("Delete from ALUMNOS where dni=" + dni, Cnx);
+            Cmd = new SqlCommand("Delete from EMPLEADOS where dni=" + dni, Cnx);
             Cmd.ExecuteNonQuery();
 
 
