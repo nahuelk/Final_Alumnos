@@ -19,7 +19,7 @@ namespace BLL
             dato = new DATOS();
         }
 
-        public void AltaAlumno(ALUMNOS alumno)
+        public void AltaAlumno(ALUMNO alumno)
         {
 
             dato.Agregar(alumno);
@@ -27,7 +27,7 @@ namespace BLL
 
         }
 
-        public void ModificarAlumno(ALUMNOS alumno)
+        public void ModificarAlumno(ALUMNO alumno)
         {
 
             dato.Modificar(alumno);
@@ -67,13 +67,13 @@ namespace BLL
         }
 
 
-        public ALUMNOS fichaAlumno(Int32 dniAlumno)
+        public ALUMNO fichaAlumno(Int32 dniAlumno)
         {
             return dato.ficha(dniAlumno);
 
         }
 
-        public ALUMNOS EliminarAlumno(Int32 dniAlumno)
+        public ALUMNO EliminarAlumno(Int32 dniAlumno)
         {
             return dato.Eliminar(dniAlumno);
 
