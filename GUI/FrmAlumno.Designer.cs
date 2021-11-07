@@ -153,7 +153,7 @@ namespace GUI
             // lblMatricula
             // 
             this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Location = new System.Drawing.Point(58, 166);
+            this.lblMatricula.Location = new System.Drawing.Point(53, 166);
             this.lblMatricula.Name = "lblMatricula";
             this.lblMatricula.Size = new System.Drawing.Size(69, 13);
             this.lblMatricula.TabIndex = 12;
@@ -165,9 +165,9 @@ namespace GUI
             this.lblContrasena.AutoSize = true;
             this.lblContrasena.Location = new System.Drawing.Point(58, 203);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(54, 13);
+            this.lblContrasena.Size = new System.Drawing.Size(81, 13);
             this.lblContrasena.TabIndex = 13;
-            this.lblContrasena.Text = "NOMBRE";
+            this.lblContrasena.Text = "CONTRASEÑA";
             // 
             // chkbxHabilitado
             // 
@@ -214,6 +214,7 @@ namespace GUI
             this.Controls.Add(this.label1);
             this.Name = "FrmAlumno";
             this.Text = "º";
+            this.Load += new System.EventHandler(this.FrmAlumno_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

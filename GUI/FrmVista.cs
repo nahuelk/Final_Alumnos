@@ -25,7 +25,7 @@ namespace GUI
         private void FrmVista_Load(object sender, EventArgs e)
         {
 
-            NEGOCIO N = new NEGOCIO();
+            BLL_Alumnos N = new BLL_Alumnos();
             N.MostrarTabla(dataGridView1, Tabla);
 
 

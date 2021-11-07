@@ -42,13 +42,15 @@ namespace GUI
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iNICIOToolStripMenuItem});
+            this.iNICIOToolStripMenuItem,
+            this.eXITToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -72,20 +74,20 @@ namespace GUI
             this.iMPORTARToolStripMenuItem,
             this.eXPORTARToolStripMenuItem});
             this.pERSONALToolStripMenuItem.Name = "pERSONALToolStripMenuItem";
-            this.pERSONALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pERSONALToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.pERSONALToolStripMenuItem.Text = "PERSONAL";
             // 
             // cRUDToolStripMenuItem
             // 
             this.cRUDToolStripMenuItem.Name = "cRUDToolStripMenuItem";
-            this.cRUDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cRUDToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.cRUDToolStripMenuItem.Text = "CRUD";
             this.cRUDToolStripMenuItem.Click += new System.EventHandler(this.cRUDToolStripMenuItem_Click);
             // 
             // vISTASToolStripMenuItem
             // 
             this.vISTASToolStripMenuItem.Name = "vISTASToolStripMenuItem";
-            this.vISTASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vISTASToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.vISTASToolStripMenuItem.Text = "VISTAS";
             this.vISTASToolStripMenuItem.Click += new System.EventHandler(this.vISTASToolStripMenuItem_Click);
             // 
@@ -95,7 +97,7 @@ namespace GUI
             this.cSVToolStripMenuItem1,
             this.xMLToolStripMenuItem1});
             this.iMPORTARToolStripMenuItem.Name = "iMPORTARToolStripMenuItem";
-            this.iMPORTARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iMPORTARToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.iMPORTARToolStripMenuItem.Text = "IMPORTAR";
             // 
             // cSVToolStripMenuItem1
@@ -118,7 +120,7 @@ namespace GUI
             this.xMLToolStripMenuItem,
             this.cSVToolStripMenuItem});
             this.eXPORTARToolStripMenuItem.Name = "eXPORTARToolStripMenuItem";
-            this.eXPORTARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eXPORTARToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.eXPORTARToolStripMenuItem.Text = "EXPORTAR";
             // 
             // xMLToolStripMenuItem
@@ -138,6 +140,13 @@ namespace GUI
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // eXITToolStripMenuItem
+            // 
+            this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.eXITToolStripMenuItem.Text = "EXIT";
+            this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -172,6 +181,7 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eXITToolStripMenuItem;
     }
 }
 

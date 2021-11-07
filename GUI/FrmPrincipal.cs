@@ -53,7 +53,7 @@ namespace GUI
             saveFileDialog1.Filter = "Archivos Xml|*.xml";
             saveFileDialog1.FileName = "";
             saveFileDialog1.ShowDialog();
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
 
             negocio.ExportarXml(saveFileDialog1.FileName, "ALUMNOS");
 
@@ -64,7 +64,7 @@ namespace GUI
             saveFileDialog1.Filter = "Archivos CSV|*.csv";
             saveFileDialog1.FileName = "";
             saveFileDialog1.ShowDialog();
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
 
             negocio.ExportarCsv(saveFileDialog1.FileName, "ALUMNOS");
         }
@@ -76,7 +76,7 @@ namespace GUI
             openFileDialog1.ShowDialog();
             string archivo = openFileDialog1.FileName;
 
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
 
             negocio.ImportarArchivo(archivo);
         }
@@ -88,9 +88,16 @@ namespace GUI
             openFileDialog1.ShowDialog();
             string archivo = openFileDialog1.FileName;
 
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
 
             negocio.ImportardesdeXML(archivo);
+        }
+
+        private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin F = new FrmLogin();
+            F.ShowDialog();
         }
     }
 }

@@ -14,26 +14,34 @@ namespace GUI
 {
     public partial class FrmEstudiante : Form
     {
-        NEGOCIO negocio;
+        BLL_Alumnos negocio;
 
         public FrmEstudiante()
         {
-            negocio = new NEGOCIO();
+            negocio = new BLL_Alumnos();
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ALUMNO alumno = new ALUMNO();
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
             alumno = negocio.fichaAlumno(Convert.ToInt32(txtUsuario.Text));
             if (alumno.DNI.ToString() == txtUsuario.Text)
             {
                 if (alumno.CONTRASENA.ToString() == txtContrasena.Text)
                 {
-                    this.Hide();
-                    Examenes F = new Examenes();
-                    F.ShowDialog();
+                    if (alumno.ESTADO.ToString() == "true")
+                    {
+                        this.Hide();
+                        FrmMaterias F = new FrmMaterias();
+                        F.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Su situacion no le permite inscribirse a examenes, por favor contacte a bedelía");
+                    }
+
                 }
                 else
                 {
@@ -45,6 +53,18 @@ namespace GUI
             {
                 MessageBox.Show("Su usuario o contraseña no son correctos, por favor contactese con bedelía");
             }
+        }
+
+        private void FrmEstudiante_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin F = new FrmLogin();
+            F.ShowDialog();
         }
     }
 }

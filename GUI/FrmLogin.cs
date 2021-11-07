@@ -37,5 +37,10 @@ namespace GUI
             FrmEstudiante F = new FrmEstudiante();
             F.ShowDialog();
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
