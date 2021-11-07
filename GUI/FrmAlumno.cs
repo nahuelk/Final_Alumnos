@@ -14,10 +14,10 @@ namespace GUI
 {
     public partial class FrmAlumno : Form
     {
-        NEGOCIO negocio;
+        BLL_Alumnos negocio;
         public FrmAlumno()
         {
-            negocio = new NEGOCIO();
+            negocio = new BLL_Alumnos();
             InitializeComponent();
         }
 
@@ -70,7 +70,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             ALUMNO alumno = new ALUMNO();
-            NEGOCIO negocio = new NEGOCIO();
+            BLL_Alumnos negocio = new BLL_Alumnos();
             alumno = negocio.fichaAlumno(Convert.ToInt32(txtDni.Text));
             if (alumno.DNI != 0)
             {
@@ -95,7 +95,7 @@ namespace GUI
         {
             {
                 ALUMNO alumno = new ALUMNO();
-                NEGOCIO negocio = new NEGOCIO();
+                BLL_Alumnos negocio = new BLL_Alumnos();
                 alumno = negocio.EliminarAlumno(Convert.ToInt32(txtDni.Text));
                 if (alumno.DNI != 0)
                 {
@@ -124,6 +124,11 @@ namespace GUI
         }
 
         private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAlumno_Load(object sender, EventArgs e)
         {
 
         }

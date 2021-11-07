@@ -46,16 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Examenes.cs">
+    <Compile Include="FinalDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Examenes.Designer.cs">
-      <DependentUpon>Examenes.cs</DependentUpon>
+    <Compile Include="FrmMaterias.Designer.cs">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmAlumno.cs">
       <SubType>Form</SubType>
@@ -95,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMaterias.resx">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlumno.resx">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporte.resx">
+      <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVista.resx">
       <DependentUpon>FrmVista.cs</DependentUpon>
@@ -130,6 +151,39 @@
     </None>
     <None Include="FinalDataSet.xss">
       <DependentUpon>FinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet1.xsc">
+      <DependentUpon>FinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalDataSet1.xss">
+      <DependentUpon>FinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet2.xsc">
+      <DependentUpon>FinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalDataSet2.xss">
+      <DependentUpon>FinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet3.xsc">
+      <DependentUpon>FinalDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FinalDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalDataSet3.xss">
+      <DependentUpon>FinalDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
